@@ -1,0 +1,25 @@
+{% extends "theme.html" %}
+    {% block content %}
+        <h3 align="center">学生登陆</h3>
+        <form method="POST" action="{% url '登陆页面' %}" align="center">
+            {% csrf_token %}
+
+            <br>
+            用户名
+            <br>
+            <br>
+            <input type="text" name="用户名">
+            <br>
+
+            密码
+            <br>
+            <br>
+            <input type="password" name="密码">
+            <br>
+            <br>
+            <input class="btn btn-primary" type="submit" value="登陆">
+            <br>
+            {{ 登陆出错 }}
+        
+        </form>
+    {% endblock content %}

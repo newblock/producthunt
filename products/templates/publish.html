@@ -1,0 +1,30 @@
+{% extends "theme.html" %}
+    {% block content %}
+        <div class="container text-left">
+          </div>
+        <div class="container">
+          <h3 class="jumbotron-heading">发布新程序</h3>
+
+            <form method="POST" action="{% url '发布页面' %}" align="center" enctype="multipart/form-data">
+                {% csrf_token %}
+                <br>
+                标题
+                <br>
+                <input type="text" name="APP名称">
+                <br>
+                <textarea name="介绍" id="" cols="70" rows="10"></textarea>
+                <br>
+                <br>
+                APP图标
+                <input type="file" name="APP图标">
+                <br>
+                <br>
+                大图
+                <input type="file" name="大图">
+                <br>
+                {{ 图片错误 }}
+                <br>
+                <input class="btn btn-primary" type="submit" value="发布">
+            </form>
+        </div>
+    {% endblock content %}
